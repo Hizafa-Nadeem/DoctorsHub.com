@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "db_connectivity", "db_connectivity\db_connectivity.csproj", "{36CE9CB6-519A-4664-824F-746EB386A0DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36CE9CB6-519A-4664-824F-746EB386A0DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CE9CB6-519A-4664-824F-746EB386A0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CE9CB6-519A-4664-824F-746EB386A0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CE9CB6-519A-4664-824F-746EB386A0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

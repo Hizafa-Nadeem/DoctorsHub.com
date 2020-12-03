@@ -1,0 +1,44 @@
+﻿@model string
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>.::Edit My Profile::.  </title>
+    <link href="~/Content/myStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="margin-left: 30%; padding-top: 50px; padding-left: 100px; margin-top: 5%; width: 40%; background: #ff6347;text-decoration: wavy;font-size: 18px;">
+        <h2>Enter your Data: </h2>
+        <form method="post" action="../Home/ECon">
+          Contact:  
+            <br>
+            <input type="text" required name="contact" id="contact" placeholder="Contact...">
+           
+            <button type="submit"
+                id="SubmitButton" >
+                Update</button>
+            
+        </form>
+        <form method="post" action="../Home/EEmail">
+            Email:<br>
+            <input type="text" required name="email" id="email" placeholder="abc@xyz.com...">
+            
+            <button type="submit"
+                id="SubmitButton" >
+                Update</button>
+            
+        </form>
+        <form method="post" action="../Home/ERes">
+            Residence:<br>
+            <input type="text" required name="res" id="res" placeholder="Residence...">
+            
+            <button type="submit"
+                id="SubmitButton" >
+                Update</button>
+            
+        </form>
+        <br ><label>@Model</label><br ><br >
+    </div>
+</body>
+</html>
+

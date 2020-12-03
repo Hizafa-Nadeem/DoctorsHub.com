@@ -1,0 +1,315 @@
+﻿    @using db_connectivity.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<style>
+    input {
+        border: 2px solid red;
+        border-radius: 10px;
+        width: 80%;
+        height: 9%;
+        margin-left: 2%;
+    }
+
+    .mybutton {
+        background-color: #f0f0f0; /* Green */
+        border: none;
+        color: white;
+        padding: 7px 4px;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .container2 {
+        width: 100%;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .container:hover {
+        background-color: #f5f5f5;
+    }
+
+    .mybutton2 {
+        background-color: white;
+        width: 100%;
+        height: 40%;
+        text-align: left;
+        margin-top: -1%;
+        margin-right: -1%;
+        cursor: pointer;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+        .mybutton2:hover {
+            background-color: #f5f5f5;
+        }
+
+    name {
+        font-weight: bold;
+        font-size: 16px;
+        margin-left: 2%;
+        padding-top: 30%;
+        line-height: 20%;
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+
+    mname {
+        font-weight: bold;
+        font-size: 23px;
+        margin-left: 1%;
+        margin-top: 800px;
+        padding-top: 10px;
+    }
+
+    msg {
+        font-size: 14px;
+        padding-left: 3%;
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+
+    .sent {
+        position: absolute;
+        color: black;
+        padding-left: 20px;
+        padding-right: 20px;
+        bottom: 12%;
+        right: 2%;
+        top: 22%;
+        left: 35%;
+        overflow-y:scroll;
+        display:flexbox;
+        flex-direction: column-reverse;
+    }
+
+    .sentT {
+        color: black;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 50%;
+        text-align: right;
+        font-size: 16px;
+    }
+
+    .rec {
+        color: black;
+        padding-left: 10px;
+        padding-right: -20%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 50%;
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .mycir {
+        margin-top: -2%;
+        width: 32px;
+        height: 32px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 16px;
+        border: 1px solid red;
+        border-radius: 50%;
+        color: black;
+    }
+</style>
+
+<body>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="content">
+        <div class="content__container">
+            <p class="content__container__text">
+                Hello
+            </p>
+
+            <ul class="content__container__list">
+                <li class="content__container__list__item">world !</li>
+                <li class="content__container__list__item">doctor !</li>
+                <li class="content__container__list__item">patient !</li>
+                <li class="content__container__list__item">everybody !</li>
+            </ul>
+        </div>
+    </div>
+    <!--left////////////////////////////////////-->
+    <div style="width: 35%; border-color: black; border: thin; border-radius: 2px; height: 100%; margin-top: 6%; background-color: white; float: left;">
+        <div style="width: 100%; height: 6%; background-color: #f0f0f0;">
+            <div style="width: 8%; float:left; margin-top:0.2%;" >
+                <a href="../Home/Return"><i class="fa fa-home" style="color: white; font-size: 35px;"></i></a>
+            </div>
+            <div style="width: 92%; float:right" >
+            <form method="post" action="../Home/searchchat">
+
+                <input type="text" required name="id" id="id" placeholder=" Search or start a new chat">
+
+                <button type="submit" class="mybutton"
+                    id="SubmitButton">
+                    <i class="fa fa-search" style="color: white; font-size: 22px;"></i>
+                </button>
+            </form>
+                </div>
+
+            @if (ViewData["search"] as IEnumerable<message> != null)
+            {
+                foreach (var item in ViewData["search"] as IEnumerable<message>)
+                {
+                <form method="post" action="../Home/mychat">
+                    <input type="hidden" name="id4" id="id4" value="@item.id">
+                    <input type="hidden" name="name4" id="name4" value="@item.name">
+                    <button class="mybutton2">
+
+                        <br>
+                        <div style="float: left;" class="mycir">
+                            @item.id
+                        </div>
+                        <div style="margin-top: -1%">
+                            <name> @item.name</name>
+                            <br>
+                            <msg> @item.comment</msg>
+                        </div>
+                        <br>
+                    </button>
+                </form>
+                }
+            }
+
+
+            @if (ViewData["message"] as IEnumerable<message> != null)
+            {
+                foreach (var item in ViewData["message"] as IEnumerable<message>)
+                {
+                
+                     
+                <form method="post" action="../Home/mychat">
+                    <input type="hidden" name="id4" id="id4" value="@item.id">
+                    <input type="hidden" name="name4" id="name4" value="@item.name">
+                    <button class="mybutton2">
+
+                        <br>
+                        <div style="float: left;" class="mycir">
+                            @item.id
+                        </div>
+                        <div style="margin-top: -1%">
+                            <name> @item.name</name>
+                            <br>
+                            <msg> @item.comment</msg>
+                        </div>
+                        <br>
+                    </button>
+                </form>
+                }
+            }
+
+
+
+
+        </div>
+    </div>
+
+    <!--right////////////////////////////////////-->
+
+    <div style="width: 65%; border-color: black; border: thin; height: 80%; margin-top: 6%; background-color: white; float: right;">
+        <div style="width: 100%; height: 8%; background-color: #e8e8e8;">
+            @if (ViewData["cid"] != null)
+            {
+                <div style="float: left; margin-top: 0.5%; margin-left: 1%" class="mycir">
+
+                    @if (ViewData["cid"] != null)
+                    {
+                        String item = ViewData["cid"] as String;
+                  
+                        <label>@item</label> 
+                    
+                    }
+
+                </div>
+            }
+            <div style="padding-top: 0.8%">
+
+                <mname> @if (ViewData["cname"] != null)
+                        {
+                            String item = ViewData["cname"] as String;
+                  
+                      <label>@item</label> 
+                    
+                        }</mname>
+            </div>
+        </div>
+        <img  style="height:100%;width:100%;position:relative;opacity:0.3" id="img_logo"  src="@Url.Content("../../Image/1.jpg")" />
+
+        <div class="sent" id="sent">
+            @if (ViewData["chat"] as IEnumerable<chat> != null)
+            {
+                foreach (var item in ViewData["chat"] as IEnumerable<chat>)
+                {
+                    if (@item.isdoc == "1")
+                    {
+                <div class="sentT">
+                    
+                    @item.comment
+                </div>
+                    }
+                    else
+                    {
+                <div class="rec">
+                   
+                    @item.comment
+                </div>
+                    }
+
+                }
+            }
+
+        </div>
+
+    </div>
+
+    <div style="width: 65%; height: 100%; background-color: #f0f0f0; float: right; position: relative">
+        
+        <form method="post" action="../Home/sendchat">
+            @if (ViewData["cid"] != null)
+                    {
+                        String item = ViewData["cid"] as String;
+                  
+                        <input type = "hidden" name = "id5" id="id5" value = "@item"/>
+                    
+                    }
+
+            <input type="text" required name="comment" id="comment" placeholder=" Type a message">
+
+            <button type="submit" class="mybutton"
+                id="SubmitButton">
+                <i class="fa fa-arrow-circle-right" style="color: darkgray; font-size: 26px;"></i>
+            </button>
+
+        </form>
+        
+    </div>
+    <script>
+        var messageBody = document.querySelector('#sent');
+        messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+
+    </script>
+</body>
+</html>

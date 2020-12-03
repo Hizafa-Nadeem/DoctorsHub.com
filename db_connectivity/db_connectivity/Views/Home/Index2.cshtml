@@ -1,0 +1,253 @@
+﻿@{
+    ViewBag.Title = "Sign Up";
+}
+@model  string
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="~/Scripts/sjava.js"></script>
+    <link href="~/Content/main1.css" rel="stylesheet" />
+    <link href="~/Content/util1.css" rel="stylesheet" />
+    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util1.css">
+    <link rel="stylesheet" type="text/css" href="css/main1.css">
+    <!--===============================================================================================-->
+</head>
+<style>
+    #grad {
+        background-color: white;
+        max-height: 100%;
+        overflow-y: scroll;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0 0 10px #f56a6a;
+    }
+
+    #boxes {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    div {
+        float: left;
+    }
+
+    #column1 {
+        background-color: white;
+    }
+
+
+    #column2 {
+        text-align: left;
+        background: white;
+    }
+</style>
+<body style="background-color: white;">
+    <div id="grad">
+    <div id="boxes">
+        <div id="column1" class="limiter">
+            
+                <div class="container-login100">
+
+                    <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                        <form method="post" action="../Home/Signup">
+                            <span class="login100-form-title p-b-59">
+                                <h1 style="color: #cb1818; font-size: 70%; margin-top: -8%; font-family: Centaur;">Sign Up
+                                </h1>
+                            </span>
+                            <div class="wrap-input100 validate-input" data-validate="Name is required" style="font-size: 20%; margin-top: -5%;">
+                                <span class="label-input100"><b>Full Name</b></span>
+                                <input class="input100" id="uname" type="text" name="uname" placeholder="Name..." style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+
+
+                            <div class="wrap-input100 validate-input" data-validate="Password is required" style="font-size: 20%; margin-top: -3%;">
+                                <span class="label-input100"><b>Password</b></span>
+                                <input class="input100" id="password" type="text" name="password" placeholder="*************" style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="Repeat Password is required" style="font-size: 20%; margin-top: -3%;">
+                                <span class="label-input100"><b>Repeat Password</b></span>
+                                <input class="input100" id="repeatpassword" type="text" name="repeatpassword" placeholder="*************" style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <br>
+                            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz" style="font-size: 20%; margin-top: -3%;">
+                                <span class="label-input100"><b>Email</b></span>
+                                <input class="input100" id="email" type="text" name="email" placeholder="Email addess... e.g ex@abc.xyz" style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="Valid db is required" style="font-size: 20%; margin-top: -3%;">
+                                <span class="label-input100"><b>Date Of Birth</b></span>
+                                <input class="input100" id="dob" type="date" name="dob" style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="Contact is required" style="font-size: 20%; margin-top: -3%;">
+                                <span class="label-input100"><b>Contact</b></span>
+                                <input class="input100" id="contact" type="text" name="contact" placeholder="e.g 03239323789" style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <div class="wrap-input100 validate-input" data-validate="address is required" style="font-size: 20%; margin-top: -3%;">
+                                <span class="label-input100"><b>Address</b></span>
+                                <input class="input100" id="address" type="text" name="address" placeholder="e.g fast university" style="margin-top: -1.5%">
+                                <span class="focus-input100"></span>
+                            </div>
+
+                            <p style="color: #b0b0b0; font-size: 80%;  font-family: Poppins; font-weight: bold; ">
+                                Gender :
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+
+                    Male<input type="radio" name="gender" value="male" id="m">
+                                Female
+                            <input type="radio" name="gender" value="female" id="f">
+
+                                <br>
+                            </p>
+                           
+
+                            <p style="color: #b0b0b0; font-size: 80%; font-family: Poppins; font-weight: bold; ">
+                                Is Doctor:
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+
+                    Yes<input type="radio" name="doc" value="doctor" id="d">
+                                &nbsp;&nbsp;
+                    No
+                            <input type="radio" name="doc" value="patient" id="p">
+                                <br>
+                            </p>
+                            <!-- <br><br>
+                   <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="label-input100">Speciality</span>
+                        <input class="input100" id="speciality" type="text" name="speciality" placeholder="For Doctors">
+                        <span class="focus-input100"></span>
+                    </div>-->
+
+
+                            <br>
+                            <br>
+
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                    <button class="login100-form-btn" type="submit"
+                                        id="SubmitButton" onclick="check()">
+                                        Sign up</button>
+
+                                </div>
+                                <br>
+                                <a href="../../Home/Index" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">Sign in 
+                            <i class="fa fa-long-arrow-right m-l-5"></i>
+                                </a>
+                            </div>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;<label>@Model</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+    <div id="column2" style="width: 50%; background: white;">
+        <img style="margin-left:35%;" float="right" id="img_logo" alt="Logo" src="@Url.Content("../../Image/Cap.jpeg")" />
+        <h1 style="color: #cb1818; font-size: 200%; font-family: Centaur; border-bottom: inset; border-color: #d7d0d0;">About Us
+        </h1>
+        <p style="color: #817c7c;">
+            Welcome to DoctorsHub where we provide the Care You Can Believe In!
+            <br />
+            Established in 2020 by young computer
+            scientists aiming to make a difference in the world by providing exceptional healthcare services in the comfort of your own home.
+
+            <br />
+            With DoctorsHub you can now make Online Appointments with your trusted Doctors, get reminders of your Medicines, keep
+            a track of your Medical Record and much more!<br />
+            <br />
+
+            Sign Up for FREE!
+        </p>
+        <h2 style="color: #cb1818; font-size: 200%; font-family: Centaur; border-bottom: inset; border-color: #d7d0d0;">Our Team
+        </h2>
+        <p style="color: #817c7c;">
+            A Team of Young Computer Scientists aiming to provide the best of Healthcare Services.
+            <br />
+            <br />
+            Our Team Members:
+            <br />
+            Hizafa Nadeem<br />
+            Kainat Asif
+            <br />
+            Laiba Imran<br />
+            Arooba Ahmad<br />
+        </p>
+        <h3 style="color: #cb1818; font-size: 200%; font-family: Centaur; border-bottom: inset; border-color: #d7d0d0;">Contact Us
+        </h3>
+        <p style="color: red;">
+            Telephone:
+                        555 77 855
+                    
+                        Location:
+                        Fast University
+                    
+                       Email:
+                        l181234@lhr.nu.edu.pk
+        </p>
+    </div>
+        </div>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+
+
+</body>
+</html>

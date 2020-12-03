@@ -1,0 +1,35 @@
+﻿@model string
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>.::Edit My Password::.  </title>
+    <link href="~/Content/myStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="margin-left: 30%; padding-top: 50px; padding-left: 100px; margin-top: 5%; width: 40%; background: #ff6347;text-decoration: wavy;font-size: 18px;">
+        <h2>Enter your Data: </h2>
+        <form method="post" action="../Home/EPass">
+          Password:  
+            <br>
+            <input type="text" required name="pass" id="pass" placeholder="Password....">
+           
+            
+      <br>
+            New Passowrd:<br>
+            <input type="text" required name="pass2" id="pass2" placeholder="New...">
+            
+    <br>
+            Repeat Password:<br>
+            <input type="text" required name="rpass" id="rpass" placeholder="Repeat...">
+            
+            <button type="submit"
+                id="SubmitButton" >
+                Update</button>
+            
+        </form>
+        <br ><label>@Model</label><br ><br >
+    </div>
+</body>
+</html>
+
