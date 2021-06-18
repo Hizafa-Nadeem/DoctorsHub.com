@@ -21,6 +21,17 @@ MAIN FEATURES:
 16.	Patient can search doctors from specialty or id.
 
 
+Tools Used:
+Microsoft Visual Studio
+Microsoft SQL Management Studio
+
+Languages Used:
+SQL
+C#
+Html
+CSS
+
+
 
 
 
